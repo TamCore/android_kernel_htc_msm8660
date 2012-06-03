@@ -135,9 +135,9 @@
 
 #ifdef CONFIG_CPU_FREQ_GOV_ONDEMAND_2_PHASE
 int set_two_phase_freq(int cpufreq);
+#endif
 #ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
 int id_set_two_phase_freq(int cpufreq);
-#endif
 #endif
 
 /* Macros assume PMIC GPIOs start at 0 */
@@ -6218,9 +6218,9 @@ static void __init msm8x60_init(struct msm_board_data *board_data)
 
 #ifdef CONFIG_CPU_FREQ_GOV_ONDEMAND_2_PHASE
 	set_two_phase_freq(1134000);
+#endif
 #ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
 	id_set_two_phase_freq(1134000);
-#endif
 #endif
 
 	msm8x60_init_tlmm();
