@@ -28,6 +28,10 @@
 /* Badass gpu state detection */
 extern bool gpu_busy_state;
 #endif
+#ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
+/* Intellidemand screen state detection */
+extern bool lmf_screen_state;
+#endif
 
 /*********************************************************************
  *                     CPUFREQ NOTIFIER INTERFACE                    *
