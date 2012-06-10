@@ -23,6 +23,12 @@ TUN=0
 ### DO NOT CHANGE ANYTHING BELLOW THIS LINE! ###
 L="log -p i -t $0"
 
+if [ -e "/data/local/tamcore-kernel.sh" ];
+then
+	$L "Loading /data/local/tamcore-kernel.sh"
+	source /data/local/tamcore-kernel.sh
+fi
+
 $L "setting sweep2wake to ${SWEEP2WAKE}"
 echo ${SWEEP2WAKE} > /sys/android_touch/sweep2wake
 
