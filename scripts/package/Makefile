@@ -138,7 +138,7 @@ perf-%pkg: FORCE
 # ---------------------------------------------------------------------------
 android-pkg: FORCE
 	@$(MAKE) clean
-	@$(MAKE)
+	@$(MAKE) zImage modules
 	mkdir -p $(objtree)/android/
 	cp -r $(srctree)/releasetools/* $(objtree)/android
 	cp -fv $(objtree)/arch/arm/boot/zImage $(objtree)/android/kernel/zImage
