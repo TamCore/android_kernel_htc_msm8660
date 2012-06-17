@@ -94,8 +94,3 @@ if [ "${TUN}" = "1" ]; then
 		$L "Inserted tun kernel module."
 	fi
 fi
-
-if [ -e "/system/bin/thermald" ]; then
-	$L "Found thermald. Disabling builtin thermal monitoring."
-	echo 0 > /sys/module/msm_thermal/parameters/enabled
-fi
