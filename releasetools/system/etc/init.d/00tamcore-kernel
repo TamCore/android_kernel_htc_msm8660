@@ -20,6 +20,9 @@ ZRAM=0
 # TUN
 TUN=0
 
+# USB fast charge
+FASTCHG=0
+
 ### DO NOT CHANGE ANYTHING BELLOW THIS LINE! ###
 L="log -p i -t $0"
 
@@ -31,6 +34,9 @@ fi
 
 $L "setting sweep2wake to ${SWEEP2WAKE}"
 echo ${SWEEP2WAKE} > /sys/android_touch/sweep2wake
+
+$L "setting fast charge to ${FASTCHG}"
+echo ${FASTCHG} > /sys/kernel/fast_charge/force_fast_charge
 
 CUR_GOV="`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`"
 echo badass > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
