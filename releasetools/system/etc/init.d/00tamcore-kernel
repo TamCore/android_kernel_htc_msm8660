@@ -21,6 +21,9 @@ ZRAM=0
 TUN=0
 
 # USB fast charge
+# 0 - disabled (default)
+# 1 - substitute AC to USB charging always
+# 2 - substitute AC to USB charging only if no USB peripheral is detected
 FASTCHG=0
 
 # Wifi Screen-Off Power Management
