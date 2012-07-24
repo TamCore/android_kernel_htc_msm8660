@@ -85,7 +85,7 @@ static void set_cpu_work(struct work_struct *work)
 }
 #endif
 
-#ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
+#ifdef CONFIG_SEC_LIMIT_MAX_FREQ
 extern bool lmf_screen_state;
 #endif
 
@@ -98,7 +98,7 @@ static void msm_cpu_early_suspend(struct early_suspend *h)
 
 		/* disable 2nd core as well since screen is off */
 		if (cpu == 0 && num_online_cpus() > 1) {
-#ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
+#ifdef CONFIG_SEC_LIMIT_MAX_FREQ
 			lmf_screen_state = false;
 #endif
 #ifndef CONFIG_MSM_MPDEC
@@ -119,7 +119,7 @@ static void msm_cpu_late_resume(struct early_suspend *h)
 
 		/* re-enable 2nd core */
 		if (num_online_cpus() < 2 && cpu == 0) {
-#ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
+#ifdef CONFIG_SEC_LIMIT_MAX_FREQ
 			lmf_screen_state = true;
 #endif
 #ifndef CONFIG_MSM_MPDEC
