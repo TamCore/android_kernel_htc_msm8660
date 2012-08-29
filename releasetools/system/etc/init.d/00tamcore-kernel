@@ -17,9 +17,6 @@ BADASS=2
 # ZRAM
 ZRAM=0
 
-# TUN
-TUN=0
-
 # USB fast charge
 # 0 - disabled (default)
 # 1 - substitute AC to USB charging always
@@ -106,12 +103,5 @@ if [ "${ZRAM}" = "1" ]; then
 		mkswap /dev/block/zram0
 		swapon /dev/block/zram0
 		$L "ZRAM activated."
-	fi
-fi
-
-if [ "${TUN}" = "1" ]; then
-	if [ -e /system/lib/modules/tun.ko ] ; then
-		insmod /system/lib/modules/tun.ko
-		$L "Inserted tun kernel module."
 	fi
 fi
