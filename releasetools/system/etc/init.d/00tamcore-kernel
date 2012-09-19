@@ -32,11 +32,6 @@ FSYNC=1
 ### DO NOT CHANGE ANYTHING BELLOW THIS LINE! ###
 L="log -p i -t $0"
 
-if [[ "`uname -r`" != *TAMCORE* ]]; then
-	$L "This is not TamCore-Kernel. Exiting..";
-	exit 0
-fi
-
 if [ -e "/data/local/tamcore-kernel.sh" ];
 then
 	$L "Loading /data/local/tamcore-kernel.sh"
