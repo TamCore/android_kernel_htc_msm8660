@@ -44,6 +44,10 @@ echo ${SWEEP2WAKE} > /sys/android_touch/sweep2wake
 $L "setting fast charge to ${FASTCHG}"
 echo ${FASTCHG} > /sys/kernel/fast_charge/force_fast_charge
 
+if [ -f "system/lib/modules/bcmdhd.ko" ];
+then
+    modprobe bcmdhd
+fi
 $L "setting PM_FAST to ${PM_FAST}"
 echo ${PM_FAST} > /sys/module/bcmdhd/parameters/wifi_pm
 
