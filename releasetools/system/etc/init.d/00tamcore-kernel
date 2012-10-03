@@ -1,14 +1,12 @@
 #!/system/xbin/sh
 
-# Sweep2Wake
-# possible values:
+# Sweep2Wake - by showp1984
 # 0 = off
 # 1 = on
 # 2 = on without button backlights
 SWEEP2WAKE=0
 
-# Badass
-# possible values
+# Badass Governor - by showp1984
 # 1 = performance
 # 2 = balanced
 # 3 = battery saving
@@ -17,16 +15,18 @@ BADASS=2
 # ZRAM
 ZRAM=0
 
-# USB fast charge
+# USB fast charge - by Yank555-lu
 # 0 - disabled (default)
 # 1 - substitute AC to USB charging always
 # 2 - substitute AC to USB charging only if no USB peripheral is detected
 FASTCHG=0
 
-# Wifi Screen-Off Power Management
-PM_FAST=1
+# Wifi Screen-Off Power Management - by Francisco Franco
+# 0 = PM_MAX  when screen is off (default)
+# 1 = PM_FAST when screen is off
+PM_FAST=0
 
-# FSync Control
+# FSync Control - by Ezekeel
 FSYNC=1
 
 ### DO NOT CHANGE ANYTHING BELLOW THIS LINE! ###
