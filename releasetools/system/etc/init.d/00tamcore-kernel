@@ -32,6 +32,12 @@ FSYNC=1
 ### DO NOT CHANGE ANYTHING BELLOW THIS LINE! ###
 L="log -p i -t $0"
 
+if ! grep -q "TAMCORE" /proc/version ;
+then
+	$L "This is not TAMCORE-Kernel. Exiting.."
+	exit 1
+fi
+
 if [ -e "/data/local/tamcore-kernel.sh" ];
 then
 	$L "Loading /data/local/tamcore-kernel.sh"
