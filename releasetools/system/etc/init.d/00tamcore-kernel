@@ -14,6 +14,7 @@ BADASS=2
 
 # ZRAM
 ZRAM=0
+ZRAM_SIZE=104857600 # 100*1024*1024 = 100MB
 
 # USB fast charge - by Yank555-lu
 # 0 - disabled (default)
@@ -104,7 +105,7 @@ echo ${CUR_GOV} > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 if [ "${ZRAM}" = "1" ]; then
 	if [ -e /sys/block/zram0/disksize ] ; then
 		$L "Setting ZRAM disksize."
-		echo $((100*1024*1024)) > /sys/block/zram0/disksize
+		echo ${ZRAM_SIZE} > /sys/block/zram0/disksize
 
 		mkswap /dev/block/zram0
 		swapon /dev/block/zram0
